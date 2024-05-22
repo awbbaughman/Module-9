@@ -1,7 +1,10 @@
 const express = require("express");
 let dbConnect = require("./dbConnect"); 
 const app = express();
+const apiRoutes = require('./routes/apiRoutes');
 require("dotenv").config();
+
+app.use('/api', apiRoutes);
 
 // parse requests of content-type - application/json
         app.use(express.json());
